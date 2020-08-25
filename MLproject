@@ -1,0 +1,9 @@
+name: naiv
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      alpha: float
+    command: "python Naiv_MLFlow.py {alpha}"
