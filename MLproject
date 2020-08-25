@@ -5,5 +5,5 @@ conda_env: conda.yaml
 entry_points:
   main:
     parameters:
-      alpha: float
+      alpha: {type: float, default: 1}
     command: "python Naive_MLFlow.py {alpha}"
