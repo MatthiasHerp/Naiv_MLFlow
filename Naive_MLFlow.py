@@ -49,7 +49,7 @@ if __name__ == "__main__":
     train = revenue_CA_1_FOODS_day.iloc[:(len(revenue_CA_1_FOODS_day)-31)]
     test = revenue_CA_1_FOODS_day.iloc[(len(revenue_CA_1_FOODS_day)-31):]
     
-    alpha = float(sys.argv[1]) if len(sys.argv) > 1 else 0.5
+    alpha = float(sys.argv[1]) #if len(sys.argv) > 1 else 0.5
 
     with mlflow.start_run():
 
