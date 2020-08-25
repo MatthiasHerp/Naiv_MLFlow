@@ -1,9 +1,0 @@
-name: naiv
-
-conda_env: naiv_enviroment.yaml
-
-entry_points:
-  main:
-    parameters:
-      alpha: float
-    command: "python Naive_MLFlow.py {alpha}"
