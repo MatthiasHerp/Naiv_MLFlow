@@ -15,25 +15,25 @@ import mlflow
 
 #defining the evaluation metrics
 #from: https://mlflow.org/docs/latest/tutorials-and-examples/tutorial.html
-def eval_metrics(actual, pred):
-    rmse = np.sqrt(mean_squared_error(actual, pred))
-    mae = mean_absolute_error(actual, pred)
-    r2 = r2_score(actual, pred)
-    return rmse, mae, r2
+#def eval_metrics(actual, pred):
+#    rmse = np.sqrt(mean_squared_error(actual, pred))
+#    mae = mean_absolute_error(actual, pred)
+#    r2 = r2_score(actual, pred)
+#    return rmse, mae, r2
 
-def naive_forecast(train, test, alpha):
-    data = np.zeros(len(test))
-    #create the naive forecasting series with the index identical to the days to forecast which are the test data set index
-    naive_forecast = pd.Series(data,index=test.index)
-    #loop goes threw the complete data and gets forecasts
-    #we take the length thus the last day
-    #minus 365 to get a year back
-    #then minus one to get the same week day of the past year
-    #then an additional minus 1 as 2016 is a leap year
-    #i runs from 0 to 30 so that the horizon we go back deminishes as we forecast further and further
-    for i in range (0,len(test)):
-        naive_forecast[i] = alpha * train.revenue[len(train)-(365-1-i)]
-    return naive_forecast
+#def naive_forecast(train, test, alpha):
+#    data = np.zeros(len(test))
+#    #create the naive forecasting series with the index identical to the days to forecast which are the test data set index
+#    naive_forecast = pd.Series(data,index=test.index)
+#    #loop goes threw the complete data and gets forecasts
+#    #we take the length thus the last day
+#    #minus 365 to get a year back
+#    #then minus one to get the same week day of the past year
+#    #then an additional minus 1 as 2016 is a leap year
+#    #i runs from 0 to 30 so that the horizon we go back deminishes as we forecast further and further
+#    for i in range (0,len(test)):
+#        naive_forecast[i] = alpha * train.revenue[len(train)-(365-1-i)]
+#    return naive_forecast
 
 
 
