@@ -6,4 +6,4 @@ entry_points:
   main:
     parameters:
       alpha: float
-    command: "python Naiv_MLFlow.py {alpha}"
+    command: "python Naive_MLFlow.py {alpha}"
