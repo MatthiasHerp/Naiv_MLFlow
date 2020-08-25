@@ -1,6 +1,6 @@
 name: naiv
 
-conda_env: naiv_enviroment.yml
+conda_env: naiv_environment.yml
 
 entry_points:
   main:
