@@ -37,6 +37,7 @@ def naive_forecast(train, test, alpha):
 
 if __name__ == "__main__":
     warnings.filterwarnings("ignore")
+    np.random.seed(40)
     
     print("main works")
     revenue_CA_1_FOODS_day = os.path.join(os.path.dirname(os.path.abspath(__file__)), "revenue_CA_1_FOODS_day.csv")
