@@ -38,7 +38,7 @@ import mlflow
 
 
 if __name__ == "__main__":
-    #warnings.filterwarnings("ignore")
+    warnings.filterwarnings("ignore")
     #np.random.seed(40)
     
     #revenue_CA_1_FOODS_day = os.path.join(os.path.dirname(os.path.abspath(__file__)), "revenue_CA_1_FOODS_day.csv")
