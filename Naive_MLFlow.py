@@ -105,11 +105,7 @@ def Naive_Model(alpha):
         mlflow.log_artifact("./prediction_plot.png")
 
 
-# In[45]:
-
-
-Naive_Model(1)
-
+# In[45]
 
 # In[ ]:
 
