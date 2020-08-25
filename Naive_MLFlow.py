@@ -68,7 +68,7 @@ if __name__ == "__main__":
         mlflow.log_metric("mae", mae)
 
         #Plot the results
-
+'''
         plt.figure(figsize=(15, 5))
         plt.plot(test)
         plt.plot(prediction, color="red")
@@ -78,3 +78,4 @@ if __name__ == "__main__":
         plt.savefig('prediction_plot.png')
         
         mlflow.log_artifact("./prediction_plot.png")
+'''
