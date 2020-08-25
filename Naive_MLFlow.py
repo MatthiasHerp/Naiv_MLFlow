@@ -35,6 +35,8 @@ def naive_forecast(train, test, alpha):
 
 if __name__ == "__main__":
     
+    print("main works")
+    
     revenue_CA_1_FOODS_day = pd.read_csv(os.path.join(os.getcwd(), "revenue_CA_1_FOODS_day.csv"), 
                                          index_col='date')
 
