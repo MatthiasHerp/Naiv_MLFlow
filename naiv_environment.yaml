@@ -1,19 +1,10 @@
 name: tutorials
-
 channels:
-
   - defaults
-
 dependencies:
-
   - numpy>=1.14.3
-
   - pandas>=1.0.0
-
-  - scikit-learn=0.19.1
-
+  - scikit-learn=0.19.
   - pip
-
   - pip:
-
     - mlflow
