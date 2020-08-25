@@ -31,15 +31,16 @@ def naive_forecast(train, test, alpha):
         naive_forecast[i] = alpha * train.revenue[len(train)-(365-1-i)]
     return naive_forecast
 
-revenue_CA_1_FOODS_day = pd.read_csv(os.path.join(os.getcwd(), "revenue_CA_1_FOODS_day.csv"), 
-                                         index_col='date')
-
-# Split the data into training and test sets
-train = revenue_CA_1_FOODS_day.iloc[:(len(revenue_CA_1_FOODS_day)-31)]
-test = revenue_CA_1_FOODS_day.iloc[(len(revenue_CA_1_FOODS_day)-31):]
 
 
 if __name__ == "__main__":
+    
+    revenue_CA_1_FOODS_day = pd.read_csv(os.path.join(os.getcwd(), "revenue_CA_1_FOODS_day.csv"), 
+                                         index_col='date')
+
+    # Split the data into training and test sets
+    train = revenue_CA_1_FOODS_day.iloc[:(len(revenue_CA_1_FOODS_day)-31)]
+    test = revenue_CA_1_FOODS_day.iloc[(len(revenue_CA_1_FOODS_day)-31):]
 
     with mlflow.start_run():
 
