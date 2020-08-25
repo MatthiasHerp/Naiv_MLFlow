@@ -52,7 +52,7 @@ if __name__ == "__main__":
     #train = revenue_CA_1_FOODS_day.iloc[:(len(revenue_CA_1_FOODS_day)-31)]
     #test = revenue_CA_1_FOODS_day.iloc[(len(revenue_CA_1_FOODS_day)-31):]
     
-    alpha = float(sys.argv[1]) #if len(sys.argv) > 1 else 1
+    #alpha = float(sys.argv[1]) #if len(sys.argv) > 1 else 1
 
     with mlflow.start_run():
         #prediction = naive_forecast(train, test, alpha)
@@ -63,7 +63,7 @@ if __name__ == "__main__":
         #print("  MAE: %s" % mae)
         #print("  R2: %s" % r2)
 
-        mlflow.log_param("alpha", alpha)
+        mlflow.log_param("alpha", 12)
         #mlflow.log_metric("rmse", rmse)
        #mlflow.log_metric("r2", r2)
         #mlflow.log_metric("mae", mae)
