@@ -36,8 +36,8 @@ def naive_forecast(train, test, alpha):
 
 
 if __name__ == "__main__":
-    warnings.filterwarnings("ignore")
-    np.random.seed(40)
+    #warnings.filterwarnings("ignore")
+    #np.random.seed(40)
     
     #revenue_CA_1_FOODS_day = os.path.join(os.path.dirname(os.path.abspath(__file__)), "revenue_CA_1_FOODS_day.csv")
 
@@ -61,7 +61,7 @@ if __name__ == "__main__":
         #print("  MAE: %s" % mae)
         #print("  R2: %s" % r2)
 
-        mlflow.log_param("alpha", alpha)
+        mlflow.log_param("alpha", 12)
         #mlflow.log_metric("rmse", rmse)
        #mlflow.log_metric("r2", r2)
         #mlflow.log_metric("mae", mae)
