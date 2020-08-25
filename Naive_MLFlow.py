@@ -68,14 +68,14 @@ if __name__ == "__main__":
         mlflow.log_metric("mae", mae)
 
         #Plot the results
-'''
-        plt.figure(figsize=(15, 5))
-        plt.plot(test)
-        plt.plot(prediction, color="red")
-        plt.xlabel("date")
-        plt.ylabel("revenue_CA_1_FOODS")
-        plt.legend(("realization", "prediction"), loc="upper left")
-        plt.savefig('prediction_plot.png')
+
+        #plt.figure(figsize=(15, 5))
+        #plt.plot(test)
+        #plt.plot(prediction, color="red")
+        #plt.xlabel("date")
+        #plt.ylabel("revenue_CA_1_FOODS")
+        #plt.legend(("realization", "prediction"), loc="upper left")
+        #plt.savefig('prediction_plot.png')
         
-        mlflow.log_artifact("./prediction_plot.png")
-'''
+        #mlflow.log_artifact("./prediction_plot.png")
+
