@@ -38,32 +38,35 @@ revenue_CA_1_FOODS_day = pd.read_csv(os.path.join(os.getcwd(), "revenue_CA_1_FOO
 train = revenue_CA_1_FOODS_day.iloc[:(len(revenue_CA_1_FOODS_day)-31)]
 test = revenue_CA_1_FOODS_day.iloc[(len(revenue_CA_1_FOODS_day)-31):]
 
-with mlflow.start_run():
 
-            prediction = naive_forecast(train, test, alpha)
+if __name__ == "__main__":
 
-            (rmse, mae, r2) = eval_metrics(test, prediction)
+    with mlflow.start_run():
 
-            print("Naive Model (alpha=%f):" % (alpha))
-            print("  RMSE: %s" % rmse)
-            print("  MAE: %s" % mae)
-            print("  R2: %s" % r2)
+                prediction = naive_forecast(train, test, alpha)
 
-            mlflow.log_param("alpha", alpha)
-            mlflow.log_metric("rmse", rmse)
-            mlflow.log_metric("r2", r2)
-            mlflow.log_metric("mae", mae)
+                (rmse, mae, r2) = eval_metrics(test, prediction)
 
-            #Plot the results
+                print("Naive Model (alpha=%f):" % (alpha))
+                print("  RMSE: %s" % rmse)
+                print("  MAE: %s" % mae)
+                print("  R2: %s" % r2)
 
-            plt.figure(figsize=(15, 5))
-            plt.plot(test)
-            plt.plot(prediction, color="red")
-            plt.xlabel("date")
-            plt.ylabel("revenue_CA_1_FOODS")
-            plt.legend(("realization", "prediction"),  
-                   loc="upper left")
-            plt.savefig('prediction_plot.png')
+                mlflow.log_param("alpha", alpha)
+                mlflow.log_metric("rmse", rmse)
+                mlflow.log_metric("r2", r2)
+                mlflow.log_metric("mae", mae)
+
+                #Plot the results
+
+                plt.figure(figsize=(15, 5))
+                plt.plot(test)
+                plt.plot(prediction, color="red")
+                plt.xlabel("date")
+                plt.ylabel("revenue_CA_1_FOODS")
+                plt.legend(("realization", "prediction"),  
+                       loc="upper left")
+                plt.savefig('prediction_plot.png')
 
 
-            mlflow.log_artifact("./prediction_plot.png")
+                mlflow.log_artifact("./prediction_plot.png")
