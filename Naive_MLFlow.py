@@ -39,33 +39,32 @@ if __name__ == "__main__":
     warnings.filterwarnings("ignore")
     np.random.seed(40)
     
-    print("main works")
-    revenue_CA_1_FOODS_day = os.path.join(os.path.dirname(os.path.abspath(__file__)), "revenue_CA_1_FOODS_day.csv")
+    #revenue_CA_1_FOODS_day = os.path.join(os.path.dirname(os.path.abspath(__file__)), "revenue_CA_1_FOODS_day.csv")
 
-    revenue_CA_1_FOODS_day = pd.read_csv(revenue_CA_1_FOODS_day, index_col='date')
+    #revenue_CA_1_FOODS_day = pd.read_csv(revenue_CA_1_FOODS_day, index_col='date')
 
     #revenue_CA_1_FOODS_day = pd.read_csv(os.path.join(os.getcwd(), "revenue_CA_1_FOODS_day.csv"), 
     #                                     index_col='date')
 
     # Split the data into training and test sets
-    train = revenue_CA_1_FOODS_day.iloc[:(len(revenue_CA_1_FOODS_day)-31)]
-    test = revenue_CA_1_FOODS_day.iloc[(len(revenue_CA_1_FOODS_day)-31):]
+    #train = revenue_CA_1_FOODS_day.iloc[:(len(revenue_CA_1_FOODS_day)-31)]
+    #test = revenue_CA_1_FOODS_day.iloc[(len(revenue_CA_1_FOODS_day)-31):]
     
-    alpha = float(sys.argv[1]) #if len(sys.argv) > 1 else 0.5
+    #alpha = float(sys.argv[1]) #if len(sys.argv) > 1 else 0.5
 
     with mlflow.start_run():
-        prediction = naive_forecast(train, test, alpha)
-        (rmse, mae, r2) = eval_metrics(test, prediction)
+        #prediction = naive_forecast(train, test, alpha)
+        #(rmse, mae, r2) = eval_metrics(test, prediction)
 
-        print("Naive Model (alpha=%f):" % (alpha))
-        print("  RMSE: %s" % rmse)
-        print("  MAE: %s" % mae)
-        print("  R2: %s" % r2)
+        #print("Naive Model (alpha=%f):" % (alpha))
+        #print("  RMSE: %s" % rmse)
+        #print("  MAE: %s" % mae)
+        #print("  R2: %s" % r2)
 
-        #mlflow.log_param("alpha", alpha)
-        mlflow.log_metric("rmse", rmse)
-        mlflow.log_metric("r2", r2)
-        mlflow.log_metric("mae", mae)
+        mlflow.log_param("alpha", alpha)
+        #mlflow.log_metric("rmse", rmse)
+       #mlflow.log_metric("r2", r2)
+        #mlflow.log_metric("mae", mae)
 
         #Plot the results
 
