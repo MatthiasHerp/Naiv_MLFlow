@@ -31,8 +31,8 @@ def naive_forecast(train, test, alpha):
         naive_forecast[i] = alpha * train.revenue[len(train)-(365-1-i)]
     return naive_forecast
 
-revenue_CA_1_FOODS_day = os.path.join(os.path.dirname(os.path.abspath(__file__)), "revenue_CA_1_FOODS_day.csv")
-revenue_CA_1_FOODS_day = pd.read_csv(revenue_CA_1_FOODS_day, index_col='date')
+revenue_CA_1_FOODS_day = pd.read_csv(os.path.join(os.getcwd(), "revenue_CA_1_FOODS_day.csv"), 
+                                         index_col='date')
 
 # Split the data into training and test sets
 train = revenue_CA_1_FOODS_day.iloc[:(len(revenue_CA_1_FOODS_day)-31)]
