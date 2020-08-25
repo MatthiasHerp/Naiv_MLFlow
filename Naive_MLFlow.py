@@ -1,15 +1,17 @@
-import numpy as np
-import pandas as pd #data wrangeling
-#import matplotlib
-#import matplotlib.pyplot as plt
-import os #for setting the working drectory
-import sys
+import os
 import warnings
+import sys
+
+import pandas as pd
+import numpy as np
+
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+
 import mlflow
 
-#Importing evaluation metrics
-#Note: package is called scikit-learn (look for full name if i search it in anaconda)
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+#import matplotlib
+#import matplotlib.pyplot as plt
+
 
 #defining the evaluation metrics
 #from: https://mlflow.org/docs/latest/tutorials-and-examples/tutorial.html
