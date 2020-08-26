@@ -9,8 +9,8 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 import mlflow
 
-#import matplotlib
-#import matplotlib.pyplot as plt
+import matplotlib
+import matplotlib.pyplot as plt
 
 
 #defining the evaluation metrics
