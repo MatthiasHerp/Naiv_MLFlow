@@ -9,8 +9,8 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 import mlflow
 
-#import matplotlib
-import matplotlib.pyplot as plt
+import matplotlib
+#import matplotlib.pyplot as plt
 
 
 #defining the evaluation metrics
@@ -70,13 +70,13 @@ if __name__ == "__main__":
 
         #Plot the results
 
-        #plt.figure(figsize=(15, 5))
-        #plt.plot(test)
-        #plt.plot(prediction, color="red")
-        #plt.xlabel("date")
-        #plt.ylabel("revenue_CA_1_FOODS")
-        #plt.legend(("realization", "prediction"), loc="upper left")
-        #plt.savefig('prediction_plot.png')
+        matplotlib.pyplot.figure(figsize=(15, 5))
+        matplotlib.pyplot.plot(test)
+        matplotlib.pyplot.plot(prediction, color="red")
+        matplotlib.pyplot.xlabel("date")
+        matplotlib.pyplot.ylabel("revenue_CA_1_FOODS")
+        matplotlib.pyplot.legend(("realization", "prediction"), loc="upper left")
+        matplotlib.pyplot.savefig('prediction_plot.png')
         
-        #mlflow.log_artifact("./prediction_plot.png")
+        mlflow.log_artifact("./prediction_plot.png")
 
