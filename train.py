@@ -1,11 +1,11 @@
-import os
-import warnings
-import sys
+#import os
+#import warnings
+#import sys
 
-import pandas as pd
-import numpy as np
+#import pandas as pd
+#import numpy as np
 
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+#from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 import mlflow
 
@@ -38,7 +38,7 @@ import mlflow
 
 
 if __name__ == "__main__":
-    warnings.filterwarnings("ignore")
+    #warnings.filterwarnings("ignore")
     #np.random.seed(40)
     
     #revenue_CA_1_FOODS_day = os.path.join(os.path.dirname(os.path.abspath(__file__)), "revenue_CA_1_FOODS_day.csv")
