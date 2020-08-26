@@ -21,7 +21,7 @@ def eval_metrics(actual, pred):
     r2 = r2_score(actual, pred)
     return rmse, mae, r2
 
-def naive_forecast(train, test, alpha):
+def naive_forecast(train, test):
     data = np.zeros(len(test))
     #create the naive forecasting series with the index identical to the days to forecast which are the test data set index
     naive_forecast = pd.Series(data,index=test.index)
@@ -32,7 +32,7 @@ def naive_forecast(train, test, alpha):
     #then an additional minus 1 as 2016 is a leap year (here 2015so no leap year)
     #i runs from 0 to 30 so that the horizon we go back deminishes as we forecast further and further
     for i in range (0,len(test)):
-        naive_forecast[i] = alpha * train.revenue[len(train)-(365-1-i)]
+        naive_forecast[i] = train.revenue[len(train)-(365-1-i)]
     return naive_forecast
 
 
@@ -55,7 +55,7 @@ if __name__ == "__main__":
     #alpha = float(sys.argv[1]) #if len(sys.argv) > 1 else 1
 
     with mlflow.start_run():
-        prediction = naive_forecast(train, test, alpha)
+        prediction = naive_forecast(train, test)
         (rmse, mae, r2) = eval_metrics(test, prediction)
 
         #print("Naive Model (alpha=%f):" % (alpha))
