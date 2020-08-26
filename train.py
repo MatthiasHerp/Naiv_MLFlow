@@ -70,13 +70,13 @@ if __name__ == "__main__":
 
         #Plot the results
 
-        matplotlib.pyplot.figure(figsize=(15, 5))
-        matplotlib.pyplot.plot(test)
-        matplotlib.pyplot.plot(prediction, color="red")
-        matplotlib.pyplot.xlabel("date")
-        matplotlib.pyplot.ylabel("revenue_CA_1_FOODS")
-        matplotlib.pyplot.legend(("realization", "prediction"), loc="upper left")
-        matplotlib.pyplot.savefig('prediction_plot.png')
+        #matplotlib.pyplot.figure(figsize=(15, 5))
+        #matplotlib.pyplot.plot(test)
+        #matplotlib.pyplot.plot(prediction, color="red")
+        #matplotlib.pyplot.xlabel("date")
+        #matplotlib.pyplot.ylabel("revenue_CA_1_FOODS")
+        #matplotlib.pyplot.legend(("realization", "prediction"), loc="upper left")
+       # matplotlib.pyplot.savefig('prediction_plot.png')
         
-        mlflow.log_artifact("./prediction_plot.png")
+       # mlflow.log_artifact("./prediction_plot.png")
 
